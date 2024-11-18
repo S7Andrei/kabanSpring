@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kanban Board</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="kanban-board">
+    <div class="column" id="todo">
+        <h2>A Fazer</h2>
+        <button onclick="openTaskModal()">+ Nova Tarefa</button>
+        <div class="task-list"></div>
+    </div>
+    <div class="column" id="in-progress">
+        <h2>Em Progresso</h2>
+        <div class="task-list"></div>
+    </div>
+    <div class="column" id="done">
+        <h2>Concluído</h2>
+        <div class="task-list"></div>
+    </div>
+</div>
+
+<div id="taskModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeTaskModal()">&times;</span>
+        <h2>Nova Tarefa</h2>
+        <form id="taskForm">
+            <label for="title">Título:</label>
+            <input type="text" id="title" name="title" required>
+            <label for="description">Descrição:</label>
+            <textarea id="description" name="description" required></textarea>
+            <label for="priority">Prioridade:</label>
+            <select id="priority" name="priority" required>
+                <option value="alta">Alta</option>
+                <option value="media">Média</option>
+                <option value="baixa">Baixa</option>
+            </select>
+            <label for="dueDate">Data Limite:</label>
+            <input type="date" id="dueDate" name="dueDate" required>
+            <button type="submit">Salvar</button>
+        </form>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
